@@ -16,12 +16,11 @@ ALTER TABLE users
 ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 CREATE TABLE tasks (
-    id SERIAL PRIMARY KEY,
+    id SERIAL,
     name VARCHAR(50),
     user_id INTEGER
 );
 
 DROP TABLE tasks;
-\c postgres;
 
 DROP DATABASE lab1;
