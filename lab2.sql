@@ -1,6 +1,6 @@
 CREATE TABLE countries(
     country_id SERIAL PRIMARY KEY,
-    country_name VARCHAR,
+    country_name TEXT,
     region_id INTEGER,
     population INTEGER
 );
