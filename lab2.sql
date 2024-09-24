@@ -28,23 +28,16 @@ VALUES (18, 10306013);
 INSERT INTO countries DEFAULT VALUES;
 
 CREATE TABLE countries_new(LIKE countries INCLUDING ALL );
-INSERT INTO countries_new
-SELECT *FROM countries;
 
-UPDATE countries
-SET region_id = 1
-WHERE region_id IS NULL;
+INSERT INTO countries_new SELECT *FROM countries;
 
-SELECT country_name,
-       population * 1.10 AS "New Population"
-FROM countries;
+UPDATE countries SET region_id = 1 WHERE region_id IS NULL;
 
-DELETE FROM countries
-WHERE population < 100000;
+SELECT country_name, population * 1.10 AS "New Population" FROM countries;
 
-DELETE FROM countries_new
-USING countries
-WHERE countries_new.country_id = countries.country_id
+DELETE FROM countries WHERE population < 100000;
+
+DELETE FROM countries_new USING countries WHERE countries_new.country_id = countries.country_id
 RETURNING countries_new.*;
 
 DELETE FROM countries
