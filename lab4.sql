@@ -19,7 +19,6 @@ INSERT INTO Warehouses (code, location, capacity) VALUES
 (4, 'Los Angeles', 2),
 (5, 'San Francisco', 8);
 
-
 INSERT INTO Boxes (code, contents, value, warehouse) VALUES
 ('OMN7', 'Rocks', 180, 3),
 ('4H8P', 'Rocks', 250, 1),
